@@ -36,8 +36,31 @@ margin-right: 350px;'>
 	right:10px;
 	height:200px;
 	width:400px;'
-	class='well'></div></div>
+	class='well'></div>
+	<input type="file" id="myfile">
+	<button onclick="myfunction()">click it</button>
+	<script>
+		function myfunction()
+		{   //var filename=document.getElementById("myfile")
+			var filename=$('input[type=file]').val();
+			var ab=URL.createObjectURL(document.getElementById("myfile").files[0]);
+			alert(ab);
+			//alert("http://localhost/letssync/playvideo.php?master=1&&fname="+filename);
+			//location.replace("http://localhost/letssync/playvideo.php?master=1&&fname="+ab);
+			window.open("playvideo.php?master=1&&fname="+ab);
+		}
+	</script>
+</div>
 	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137674812-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-137674812-1');
+</script>
 
 </body>
 </html> 

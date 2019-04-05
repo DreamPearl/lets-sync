@@ -5,9 +5,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+	<?php
+	$filename=$_GET["fname"];
+	?>
 	
 	<video id="myvideo" width="400" height="300" controls>
-		<source src="ralph.mp4" type="video/mp4">
+		<source src="<?php echo $filename;?>" type="video/mp4">
 	</video>
 <script type="text/javascript">
 	var vid=document.getElementById("myvideo");
@@ -76,10 +79,10 @@ if($_GET["master"]==1)
 		   // can_seek=true;
 
 		   //1 sec
-		    setTimeout(function()
-		    {
-		    	can_seek=true;
-		    },50);
+		    //setTimeout(function()
+		   // {
+		   // 	can_seek=true;
+		   // },50);
 		   
 	   }
 		
@@ -102,5 +105,15 @@ if($_GET["master"]==1)
 //alert("hello hello");
 },1000);
 </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137674812-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-137674812-1');
+</script>
+
 </body>
 </html>
